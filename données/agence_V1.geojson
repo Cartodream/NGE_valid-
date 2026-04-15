@@ -352,7 +352,6 @@
 { "type": "Feature", "properties": { "ID": "322", "Ville": "WAMBRECHIES", "Adresse": "AVENUE SAINT PIERRE", "CP": "59118", "Latitude": "50.680749", "Longitude": "3.051418", "Coordonnées": "50.680749,3.051418", "vérifié": "non" }, "geometry": { "type": "Point", "coordinates": [ 3.051418, 50.680749 ] } },
 { "type": "Feature", "properties": { "ID": "332", "Ville": "WARLUS", "Adresse": "Rue des Tourelles", "CP": "62123", "Latitude": "50.273979", "Longitude": "2.665931", "Coordonnées": "50.273979,2.665931", "vérifié": "non" }, "geometry": { "type": "Point", "coordinates": [ 2.665931, 50.273979 ] } },
 { "type": "Feature", "properties": { "ID": "50", "Ville": "YFFINIAC", "Adresse": "24 av D ARMORIQUE", "CP": "22120", "Latitude": "48.477729", "Longitude": "-2.663377", "Coordonnées": "48.477729,-2.663377", "vérifié": "non" }, "geometry": { "type": "Point", "coordinates": [ -2.663377, 48.477729 ] } },
-{ "type": "Feature", "properties": { "ID": "500", "Ville": "LE PORT", "Adresse": "9 RUE SULLY PRUDHOMME", "CP": "97420", "Latitude": "-20.943625", "Longitude": "55.3143177", "Coordonnées": "-20.94362548574227, 55.31431775297977", "vérifié": "non" }, "geometry": { "type": "Point", "coordinates": [ 55.315805740110036, -20.942972011613161 ] } },
 { "type": "Feature", "properties": { "ID": "55", "Ville": "YFFINIAC", "Adresse": "20 RUE D ARMORIQUE", "CP": "22120", "Latitude": "48.477941", "Longitude": "-2.66431", "Coordonnées": "48.477941,-2.66431", "vérifié": "non" }, "geometry": { "type": "Point", "coordinates": [ -2.66431, 48.477941 ] } }
 ]
 }
