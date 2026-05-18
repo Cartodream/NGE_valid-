@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte V1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
@@ -15,22 +18,130 @@
         
         <div class="filter-section">
             
-            <div class="logo-filter" id="logoAgences" data-active="true">
-                <img src="images/logo_NGE_cmjn.svg" alt="Agences" class="filter-logo">
-                <span class="filter-label">Implantations</span>
+            <div class="filter-row">
+                <div class="toggle-switch">
+                    <input type="checkbox" id="toggle-agences" checked>
+                    <label for="toggle-agences" class="toggle-label"></label>
+                </div>
+                <div class="logo-filter" id="logoAgences" data-active="true">
+                    <img src="images/logo_NGE_cmjn.svg" alt="Agences" class="filter-logo">
+                    <span class="filter-label">Implantations</span>
+                </div>
             </div>
-            <div class="logo-filter" id="logoWater" data-active="true">
-                <img src="images/logo_cycle.svg" alt="Cycle de l'eau" class="filter-logo">
-                <span class="filter-label">Cycle de l'eau</span>
+            <div class="filter-row">
+                <div class="toggle-switch">
+                    <input type="checkbox" id="toggle-water" checked>
+                    <label for="toggle-water" class="toggle-label"></label>
+                </div>
+                <div class="logo-filter" id="logoWater" data-active="true">
+                    <img src="images/logo_cycle.svg" alt="Cycle de l'eau" class="filter-logo">
+                    <span class="filter-label">Cycle de l'eau</span>
+                    <div class="expand-arrow" id="water-expand-arrow">
+                        <span>▼</span>
+                    </div>
+                </div>
             </div>
-            <div class="logo-filter" id="logoRevema" data-active="true">
-                <img src="images/logo_revema.svg" alt="Revema" class="filter-logo">
-                <span class="filter-label">Revema</span>
+            <div class="sub-filters" id="water-sub-filters">
+                <div class="sub-filter-item">
+                    <div class="mini-toggle-switch">
+                        <input type="checkbox" id="sub-toggle-rcu" checked>
+                        <label for="sub-toggle-rcu" class="mini-toggle-label"></label>
+                    </div>
+                    <div class="sub-toggle-switch">
+                        <input type="checkbox" id="filter-rcu" checked>
+                        <label for="filter-rcu" class="sub-toggle-label">
+                            <img src="images/logo_cycle1.svg" alt="RCU" class="sub-filter-icon">
+                        </label>
+                    </div>
+                    <label for="filter-rcu" class="sub-filter-text">RCU - Réseaux de chaleur urbains</label>
+                </div>
+                <div class="sub-filter-item">
+                    <div class="mini-toggle-switch">
+                        <input type="checkbox" id="sub-toggle-canalisations" checked>
+                        <label for="sub-toggle-canalisations" class="mini-toggle-label"></label>
+                    </div>
+                    <div class="sub-toggle-switch">
+                        <input type="checkbox" id="filter-canalisations" checked>
+                        <label for="filter-canalisations" class="sub-toggle-label">
+                            <img src="images/logo_cycle2.svg" alt="Canalisations" class="sub-filter-icon">
+                        </label>
+                    </div>
+                    <label for="filter-canalisations" class="sub-filter-text">Canalisations</label>
+                </div>
+                <div class="sub-filter-item">
+                    <div class="mini-toggle-switch">
+                        <input type="checkbox" id="sub-toggle-reservoir" checked>
+                        <label for="sub-toggle-reservoir" class="mini-toggle-label"></label>
+                    </div>
+                    <div class="sub-toggle-switch">
+                        <input type="checkbox" id="filter-reservoir" checked>
+                        <label for="filter-reservoir" class="sub-toggle-label">
+                            <img src="images/logo_cycle3.svg" alt="Réservoir" class="sub-filter-icon">
+                        </label>
+                    </div>
+                    <label for="filter-reservoir" class="sub-filter-text">Réservoir</label>
+                </div>
+                <div class="sub-filter-item">
+                    <div class="mini-toggle-switch">
+                        <input type="checkbox" id="sub-toggle-step" checked>
+                        <label for="sub-toggle-step" class="mini-toggle-label"></label>
+                    </div>
+                    <div class="sub-toggle-switch">
+                        <input type="checkbox" id="filter-step" checked>
+                        <label for="filter-step" class="sub-toggle-label">
+                            <img src="images/logo_cycle4.svg" alt="STEP" class="sub-filter-icon">
+                        </label>
+                    </div>
+                    <label for="filter-step" class="sub-filter-text">STEP - Station d'épuration</label>
+                </div>
+                <div class="sub-filter-item">
+                    <div class="mini-toggle-switch">
+                        <input type="checkbox" id="sub-toggle-sdep" checked>
+                        <label for="sub-toggle-sdep" class="mini-toggle-label"></label>
+                    </div>
+                    <div class="sub-toggle-switch">
+                        <input type="checkbox" id="filter-sdep" checked>
+                        <label for="filter-sdep" class="sub-toggle-label">
+                            <img src="images/logo_cycle5.svg" alt="SDEP" class="sub-filter-icon">
+                        </label>
+                    </div>
+                    <label for="filter-sdep" class="sub-filter-text">SDEP - Station de traitement d'eau potable</label>
+                </div>
             </div>
+            <div class="filter-row">
+                <div class="toggle-switch">
+                    <input type="checkbox" id="toggle-revema" checked>
+                    <label for="toggle-revema" class="toggle-label"></label>
+                </div>
+                <div class="logo-filter" id="logoRevema" data-active="true">
+                    <img src="images/logo_revema.svg" alt="Revema" class="filter-logo">
+                    <span class="filter-label">Revema</span>
+                </div>
+            </div>
+            <div class="filter-row">
+                <div class="toggle-switch">
+                    <input type="checkbox" id="toggle-ferroviaire" checked>
+                    <label for="toggle-ferroviaire" class="toggle-label"></label>
+                </div>
+                <div class="logo-filter" id="logoFerroviaire" data-active="true">
+                    <img src="images/logo_ferroviaire.svg" alt="Ferroviaire" class="filter-logo">
+                    <span class="filter-label">Ferroviaire</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cluster-control">
+            <button id="cluster-toggle-btn" class="cluster-btn">
+                Désactiver les clusters
+            </button>
         </div>
     </div>
 
     <div id="map"></div>
+    <div id="minimap-reunion">
+        <div id="minimap-container"></div>
+        <div id="minimap-overlay"></div>
+    </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="js/main.js"></script>
